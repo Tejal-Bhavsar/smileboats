@@ -36,8 +36,10 @@ export default function Hotel() {
     }
     const AdultsAdd = () => {
         let total 
+        if(rooms > 1 && adults < 4){ 
         total = adults + 1
         setAdults(total)
+        }
     }
     const AdultsRemove = ( ) => {
         let total 
