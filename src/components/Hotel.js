@@ -20,15 +20,18 @@ export default function Hotel() {
 
     const RoomsAdd = () => {
         let total
+        if (rooms < 5 ){ 
        total = rooms + 1
         setRooms(total)
+        }
     }
     const RoomsRemove = () => {
         let total
         if(rooms > 0 ){
             total = rooms - 1
-        }
+        
         setRooms(total)
+        }
 
     }
     const AdultsAdd = () => {
@@ -38,8 +41,11 @@ export default function Hotel() {
     }
     const AdultsRemove = ( ) => {
         let total 
-        total = adults - 1
+        if(adults > 0  ){
+            total = adults - 1
         setAdults(total)
+        }
+        
     }
     const ChildrensAdd = ( ) => {
         let total 
@@ -48,8 +54,10 @@ export default function Hotel() {
     }
     const ChildrensRemove = () => {
         let total 
+        if (childrens > 0 ) {
         total = childrens - 1
         setChildren(total)
+        }
     }
     return (
         <div>
