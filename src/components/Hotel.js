@@ -16,16 +16,40 @@ import Fab from '@material-ui/core/Fab';
 export default function Hotel() {
     const [ rooms, setRooms ] = useState(1)
     const [ adults, setAdults ] = useState(1)
-    const [ children, setChildren ] = useState(0)
+    const [ childrens, setChildren ] = useState(0)
 
-    const Rooms = () => {
-        window.alert("adding and removing")
+    const RoomsAdd = () => {
+        let total
+       total = rooms + 1
+        setRooms(total)
     }
-    const Adults = () => {
+    const RoomsRemove = () => {
+        let total
+        if(rooms > 0 ){
+            total = rooms - 1
+        }
+        setRooms(total)
 
     }
-    const Childrens = ( ) => {
-
+    const AdultsAdd = () => {
+        let total 
+        total = adults + 1
+        setAdults(total)
+    }
+    const AdultsRemove = ( ) => {
+        let total 
+        total = adults - 1
+        setAdults(total)
+    }
+    const ChildrensAdd = ( ) => {
+        let total 
+        total = childrens + 1
+        setChildren(total)
+    }
+    const ChildrensRemove = () => {
+        let total 
+        total = childrens - 1
+        setChildren(total)
     }
     return (
         <div>
@@ -38,11 +62,11 @@ export default function Hotel() {
                     </TableCell>
                     <TableCell>
                         <div className="button-group" >
-                            <Fab onClick={Rooms} size="small" color="primary" aria-label="add">
+                            <Fab onClick={RoomsAdd} size="small" color="primary" aria-label="add">
                                         <AddIcon  />
                             </Fab> 
                             <span>{rooms}</span>
-                            <Fab onClick={Rooms}  size="small" color="secondary" aria-label="add">
+                            <Fab onClick={RoomsRemove}  size="small" color="secondary" aria-label="add">
                                         <RemoveIcon />
                             </Fab> 
                         </div>
@@ -54,11 +78,11 @@ export default function Hotel() {
                     </TableCell>
                     <TableCell>
                         <div className="button-group" >
-                            <Fab onClick={Adults}  size="small" color="primary" aria-label="add">
+                            <Fab onClick={AdultsAdd}  size="small" color="primary" aria-label="add">
                                         <AddIcon />
                             </Fab> 
                             <span>{adults}</span>
-                            <Fab onClick={Adults}  size="small" color="secondary" aria-label="add">
+                            <Fab onClick={AdultsRemove}  size="small" color="secondary" aria-label="add">
                                         <RemoveIcon />
                             </Fab> 
                         </div>
@@ -70,11 +94,11 @@ export default function Hotel() {
                     </TableCell>
                     <TableCell>
                         <div className="button-group" >
-                            <Fab onClick={Childrens} size="small" color="primary" aria-label="add">
+                            <Fab onClick={ChildrensAdd} size="small" color="primary" aria-label="add">
                                         <AddIcon />
                             </Fab> 
-                            <span>{children}</span>
-                            <Fab onClick={Children} size="small" color="secondary" aria-label="add">
+                            <span>{childrens}</span>
+                            <Fab onClick={ChildrensRemove} size="small" color="secondary" aria-label="add">
                                         <RemoveIcon />
                             </Fab> 
                         </div>
